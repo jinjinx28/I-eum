@@ -6,44 +6,28 @@ const MENU_RIGHT = ['홈', '로그인', '회원가입'];
 
 function Home() {
   return (
-    <main className="main-content">
-      <section className="home">
-        <h2 className="home-title">안전한 일상 회복을 위한 대응 가이드</h2>
-        <p className="home-description">범죄 피해 대응에 필요한 필수 자료를 정리하고 지원 기관을 연결해 드립니다.</p>
-        <a href="#" className="home-contact">Contact Us</a>
+    <div className='home-content'>
+      <section className='hero-section'>
+        <div className='hero-overlay'>
+          <h1 className='hero-title'>범죄 피해 대응부터 증거 정리까지, 한 번에 해결하는</h1>
+          <span className='ieum-highlight'>I - eum</span>
+        </div>
       </section>
 
-      <Card title="증거 체크리스트" icon="fa-square-check">
-        <div className="checklist">
-          {['문자/메신저 캡처본', '통화 녹취록', '사진/영상 증거'].map((text) => (
-            <label key={text}><input type="checkbox" /> {text}</label>
-          ))}
-        </div>
-      </Card>
-
-      <Card title="진술 작성" icon="fa-pen-to-square">
-        <textarea placeholder="현재 상황을 간략하게 적어주세요."></textarea>
-        <div className="btn-container">
-          <button className="submit-btn save-btn">저장하기</button>
-        </div>
-      </Card>
-
-      <Card title="AI 챗봇 상담" icon="fa-robot">
-        <p className="section-desc">전문 AI가 24시간 실시간으로 초기 대응 방법을 안내해 드립니다.</p>
-        <div className="btn-container">
-          <button className="submit-btn chat-btn">상담하기</button>
-        </div>
-      </Card>
-    </main>
-  );
-}
-
-function Card({ title, icon, children }) {
-  return (
-    <section className="step">
-      <h2><i className={`fa-solid ${icon}`}></i> {title}</h2>
-      {children}
-    </section>
+      <main className='main-content'>
+        <section className='home-info'>
+          <p className='home-text'>I-eum은 범죄 피해 초기 대응을 돕는 가이드 플랫폼입니다. <br/> 보다 상세한 법률 / 행정 지원은 범죄피해자지원중앙센터를 참고하시기 바랍니다</p>
+          <a
+            href="http://kcvc.or.kr/main/"
+            target='_blank'
+            rel='nooper noreferrer'
+            className='kcvc-btn'
+          >
+            범죄피해자중앙센터 바로가기
+          </a>
+        </section>
+      </main>
+    </div>
   );
 }
 

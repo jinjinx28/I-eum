@@ -5,6 +5,9 @@
   --text-dark: #333;
   --text-light: #fff;
   --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  --main-blue-color: #6da0da; 
+  --dark-overlay: rgba(0, 0, 0, 0.4);
 }
 
 body {

@@ -23,7 +23,7 @@ function NavGroup() {
             </button>
           </div>
 
-          <h1 className="logo"><a onClick={() => navigate('/')}>I-eum</a></h1>
+          <h1 className="logo"><a onClick={() => navigate('/')}>I - eum</a></h1>
 
           <nav className="header-right">
             <ul className="header-menu">
