@@ -51,17 +51,22 @@
 
 /* home */
 .home-info {
-  padding: 40px;
-  background: #f8fafc;
-  border-radius: 16px;
-  border-left: 5px solid #6da0da;
-  text-align: left; 
+  display: flex;
+  flex-direction: column; 
+  align-items: center;    
+  text-align: center;    
+  padding: 40px 60px;
+  background-color: #f9fbff;
+  border-radius: 20px;
+  max-width: 1000px;
+  margin: 0 auto;        
 }
 
 .home-text { 
     font-size: 0.95rem; 
     color: #475569; 
-    margin-bottom: 15px; 
+    margin-bottom: 30px; 
+    line-height: 1.6;
 }
 
 /* kcvc button */
