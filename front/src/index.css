@@ -1,3 +1,4 @@
+/* 기본 설정 */
 * { 
     box-sizing: border-box; 
     margin: 0; 
@@ -13,6 +14,8 @@ a {
     text-decoration: none;
     color: inherit;
 }
+
+/* header */
 
 .header {
     background-color: #56a5ff;
@@ -86,11 +89,15 @@ a {
     }
 }
 
+/* main */
+
 .main-content {
     max-width: 800px; 
-    margin: 90px auto 40px auto; 
+    margin: 120px auto 40px auto; 
     padding: 0 20px;
 }
+
+/* home */
 
 .home {
     background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%); 
@@ -225,6 +232,7 @@ textarea:focus {
     background: #27ae60;
 }
 
+/* footer */
 footer {
     text-align: center;
     padding: 20px;
@@ -242,4 +250,19 @@ footer {
     .main-content {
         margin-top: 80px;
     }
+}
+
+/* login */
+.login-body {
+    width: 100%;
+    max-width: 400px; 
+    padding: 20px;
+    margin: 0 auto;  
+}
+
+/* app container */
+.app-container {
+    padding-top: 100px; 
+    min-height: 100vh;  
+    width: 100%;
 }

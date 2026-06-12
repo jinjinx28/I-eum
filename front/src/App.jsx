@@ -12,15 +12,17 @@ function App() {
     <div className="App">
       <NavGroup />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-      </Routes>
+      <div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+        </Routes>
 
-      <footer className="footer">
-        <p>&copy; 이음 (I-eum) 안전지원 포털. All rights reserved.</p>
-      </footer>
+        <footer className="footer">
+          <p>&copy; 이음 (I-eum) 안전지원 포털. All rights reserved.</p>
+        </footer>
+      </div>
     </div>
   );
 }

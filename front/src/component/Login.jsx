@@ -53,7 +53,7 @@ function Login() {
     };
 
     return (
-        <div className='login-body'>
+        <div className='main-content'>
             <Form onSubmit={handleLoginSubmit}>
                 <Form.Group>
                     <Form.Label>아이디</Form.Label>
