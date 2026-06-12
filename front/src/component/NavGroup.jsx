@@ -18,21 +18,22 @@ function NavGroup() {
       <header className="header">
         <div className="header-container">
           <div className="header-left">
-            <button className="header-toggle" onClick={() => setIsOpen(true)}>
-              <i className="fa-solid fa-bars"></i>
-            </button>
+            <button className="header-toggle" onClick={() => setIsOpen(true)}>≡</button>
+            <ul className="header-menu">
+              {MENU_ITEMS.map((item) => (
+                <li key={item.name}><a onClick={() => navigate(item.path)}>{item.name}</a></li>
+              ))}
+            </ul>
           </div>
 
           <h1 className="logo"><a onClick={() => navigate('/')}>I - eum</a></h1>
 
-          <nav className="header-right">
-            <ul className="header-menu">
-              <li><a onClick={() => navigate('/login')}>로그인</a></li>
-              <li><a onClick={() => navigate('/signup')}>회원가입</a></li>
-            </ul>
-          </nav>
+          <div className="header-right">
+            <a onClick={() => navigate('/login')}>로그인</a>
+            <a onClick={() => navigate('/signup')}>회원가입</a>
+          </div>
         </div>
-      </header>
+    </header>
 
       <div className={`sidebar ${isOpen ? 'active' : ''}`}>
         <button className='closeBtn' onClick={() => setIsOpen(false)}>x</button>
