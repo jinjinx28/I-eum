@@ -1,6 +1,8 @@
 import { useState, useRef } from 'react';
 import { Nav, Form, Button, FormGroup } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import { useAuthStore } from '../../store/authStore.js';
+import { axiosPost } from '../util/dataAxios.js';
 
 function Login() {
     const navigate = useNavigate();
@@ -8,11 +10,17 @@ function Login() {
     const idRef = useRef(null);
     const pwdRef = useRef(null);
 
-    const [formdata, setFormData] = useState({id : "", pwd : ""});
+    const [formData, setFormData] = useState({id : "", pwd : ""});
     const [errors, setErrors] = useState({id : "", pwd : ""});
     const login = useAuthStore((s) => s.login);
 
-    const handleLoginSubmit = async (e)=> {
+    const handleFormChange = (e) => {
+        const { name, value} = e.target;
+        setFormData({...formData, [name]: value});
+        setErrors({id : "", pwd : "" });
+    };
+
+    const handleLoginSubmit= async (e)=> {
         e.preventDefault();
 
         if (!formData.id) {
@@ -54,7 +62,7 @@ function Login() {
                         name='id'
                         value={formData.id}
                         ref={idRef}
-                        onChange={handleFormCange} 
+                        onChange={handleFormChange} 
                     />
                 </Form.Group>
                 <Form.Group className='mt-3'>
@@ -65,7 +73,7 @@ function Login() {
                         name='pwd'
                         value={formData.pwd}
                         ref={pwdRef}
-                        onChange={handleFormCange}
+                        onChange={handleFormChange}
                     />
                 </Form.Group>
 
