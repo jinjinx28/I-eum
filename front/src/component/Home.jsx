@@ -1,4 +1,5 @@
 import React from 'react';
+import '../css/Home.css';
 
 const MENU_LEFT = ['범죄 유형', '증거리스트', 'AI 챗봇'];
 const MENU_RIGHT = ['홈', '로그인', '회원가입'];
