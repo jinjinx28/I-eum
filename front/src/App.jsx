@@ -10,19 +10,21 @@ import Footer from './component/Footer.jsx';
 
 function App() {
   return (
-    <div className="app-layout">
+    <>
       <NavGroup />
 
-      <main className='content-wrapper'>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-        </Routes>
-      </main>
+       <div className="app-layout">
+        <main className='content-wrapper'>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+          </Routes>
+        </main>
 
-      <Footer/>
-    </div>
+        <Footer/>
+      </div>
+    </>
   );
 }
 
