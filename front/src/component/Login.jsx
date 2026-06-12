@@ -1,8 +1,9 @@
 import { useState, useRef } from 'react';
-import { Nav, Form, Button, FormGroup } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import { Nav, Form, FormGroup } from 'react-bootstrap';
 import { useAuthStore } from '../../store/authStore.js';
 import { axiosPost } from '../util/dataAxios.js';
+import '../css/Login.css';
 
 function Login() {
     const navigate = useNavigate();
@@ -53,7 +54,7 @@ function Login() {
     };
 
     return (
-        <div className='main-content'>
+        <div className='loginbox'>
             <Form onSubmit={handleLoginSubmit}>
                 <Form.Group>
                     <Form.Label>아이디</Form.Label>
@@ -77,7 +78,7 @@ function Login() {
                     />
                 </Form.Group>
 
-                <Button type='submit' className='loginBtn'>Login</Button>
+                <button type='submit' className='loginBtn'>Log in</button>
             </Form>
 
             <div className='sign'>

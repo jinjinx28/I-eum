@@ -6,23 +6,22 @@ import NavGroup from './component/NavGroup.jsx';
 import Home from './component/Home.jsx';
 import Login from './component/Login.jsx';
 import Signup from './component/Signup.jsx';
+import Footer from './component/Footer.jsx';
 
 function App() {
   return (
-    <div className="App">
+    <div className="app-layout">
       <NavGroup />
 
-      <div>
+      <main className='content-wrapper'>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
         </Routes>
+      </main>
 
-        <footer className="footer">
-          <p>&copy; 이음 (I-eum) 안전지원 포털. All rights reserved.</p>
-        </footer>
-      </div>
+      <Footer/>
     </div>
   );
 }
