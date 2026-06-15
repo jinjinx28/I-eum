@@ -9,7 +9,7 @@ const QuickMenu = () => {
         desc: '피해 상황별 맞춤 가이드를 제공합니다.' 
         },
         { 
-        name: '증거 기록 도구', 
+        name: '증거 체크리스트', 
         path: '/checklist', 
         icon: <i className="fa-solid fa-magnifying-glass"></i>, 
         desc: '중요한 증거를 놓치지 않게 기록하세요.' 

@@ -55,6 +55,7 @@ function Login() {
 
     return (
         <div className='loginbox'>
+            <h2>로그인</h2>
             <Form onSubmit={handleLoginSubmit}>
                 <Form.Group>
                     <Form.Label>아이디</Form.Label>
