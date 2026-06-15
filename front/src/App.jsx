@@ -9,6 +9,7 @@ import Signup from './component/Signup.jsx';
 import Footer from './component/Footer.jsx';
 import CrimeMenu from './component/CrimeMenu.jsx';
 import CrimeDetail from './component/CrimeDetail.jsx';
+import Checklist from './component/Checklist.jsx';
 
 function App() {
   return (
@@ -23,6 +24,8 @@ function App() {
             <Route path="/signup" element={<Signup />} />
             <Route path="/crimemenu" element={<CrimeMenu />} />
             <Route path="/crimemenu/:typeId" element={<CrimeDetail />} />
+            <Route path="/checklist/:typeId" element={<Checklist />} />
+            <Route path="/checklist" element={<CrimeMenu />} />
           </Routes>
         </main>
 

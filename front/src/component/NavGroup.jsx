@@ -9,7 +9,6 @@ function NavGroup() {
 
   const MENU_ITEMS = [
     { name : '범죄 유형', path : '/crimemenu' },
-    { name : '증거 리스트', path : '/checklist' },
     { name : 'AI 챗봇', path : '/aichat' },
     { name : '보호 및 지원 제도', path : 'support'}
   ];
