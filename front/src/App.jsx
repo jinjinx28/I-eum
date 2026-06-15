@@ -10,6 +10,7 @@ import Footer from './component/Footer.jsx';
 import CrimeMenu from './component/CrimeMenu.jsx';
 import CrimeDetail from './component/CrimeDetail.jsx';
 import Checklist from './component/Checklist.jsx';
+import Support from './component/Support.jsx';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route path="/crimemenu/:typeId" element={<CrimeDetail />} />
             <Route path="/checklist/:typeId" element={<Checklist />} />
             <Route path="/checklist" element={<CrimeMenu />} />
+            <Route path="/support" element={<Support/>} />
           </Routes>
         </main>
 
