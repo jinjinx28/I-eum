@@ -2,18 +2,20 @@ import React, { useState } from 'react'; // useState 추가!
 import '../css/Support.css';
 
 const SUPPORT_CENTERS = [
-  { name: '해바라기센터', phone: '117', url: 'https://www.sunflowercenter.or.kr', desc: '성폭력·가정폭력 피해자 통합지원', color: '#ff6b6b', category: 'emergency' },
-  { name: '112 경찰청', phone: '112', url: 'https://www.police.go.kr', desc: '범죄 신고 및 긴급 출동', color: '#339af0', category: 'emergency' },
-  { name: '대한법률구조공단', phone: '132', url: 'https://www.klac.or.kr', desc: '무료 법률 상담 및 소송 지원', color: '#845ef7', category: 'legal' },
-  { name: '범죄피해자지원센터', phone: '1577-1295', url: 'https://www.kcva.or.kr', desc: '피해자 상담, 경제적/의료적 지원', color: '#f08c00', category: 'recovery' },
-  { name: '여성긴급전화', phone: '1366', desc: '가정폭력·성폭력 24시간 상담', color: '#51cf66', category: 'emergency' }
+  { name: '해바라기센터', phone: '117', url: 'https://www.sunflowercenter.or.kr', desc: '성폭력·가정폭력 피해자 통합지원', category: 'emergency' },
+  { name: '112 경찰청', phone: '112', url: 'https://www.police.go.kr', desc: '범죄 신고 및 긴급 출동', category: 'emergency' },
+  { name: '대한법률구조공단', phone: '132', url: 'https://www.klac.or.kr', desc: '무료 법률 상담 및 소송 지원', category: 'legal' },
+  { name: '범죄피해자지원센터', phone: '1577 - 1295', url: 'https://www.kcva.or.kr', desc: '피해자 상담, 경제적 / 의료적 지원', category: 'recovery' },
+  { name: '여성긴급전화', phone: '1366', desc: '가정폭력·성폭력 24시간 상담', category: 'emergency' },
+  { name: '스마일센터', phone: '02 - 333 - 1295', url: 'https://www.resmile.or.kr/main/main.php', desc: '범죄 피해 트라우마 통합지원기관', category: 'recovery'},
+  { name: '법률홈닥터', phone: '02 - 2110 - 3824', url: 'https://lawhomedoctor.moj.go.kr/', desc: '취약계층 법률지원서비스', category: 'legal'}
 ];
 
 function Support() {
-  const [category, setCategory] = useState('emergency'); // 기본값 설정
-
-  // 여기서 filteredCenters를 계산합니다!
-  const filteredCenters = SUPPORT_CENTERS.filter(center => center.category === category);
+  const [category, setCategory] = useState(null); 
+  const filteredCenters = category
+    ? SUPPORT_CENTERS.filter(center => center.category === category)
+    : SUPPORT_CENTERS;
 
   return (
     <div className="support-container">
@@ -41,7 +43,7 @@ function Support() {
 
       <div className="center-grid">
         {filteredCenters.map((center, index) => (
-          <div className="center-card" key={index} style={{ borderTop: `5px solid ${center.color}` }}>
+          <div className={`center-card ${center.category}`} key={index}>
             <h3>{center.name}</h3>
             <p className="phone"><i className="fa-solid fa-phone"></i> {center.phone}</p>
             <p className="desc">{center.desc}</p>
@@ -52,6 +54,15 @@ function Support() {
             )}
           </div>
         ))}
+      </div>
+
+      <div className='more-info'>
+        <p>더 많은 지원 제도는 법무부 피해자지원제도에서 확인하실 수 있습니다.</p>
+        <a href="http://www.moj.go.kr/cvs/index.do"
+            target='_blank'
+            rel='nooper noreferrer'
+            className='more-info-btn'>법무부 피해자지원제도 홈페이지
+        </a>
       </div>
     </div>
   );
