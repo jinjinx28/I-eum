@@ -88,6 +88,7 @@
   border: 1px solid #29b6c0; 
   transition: all 0.3s ease;
   font-size: 0.9rem;
+  text-decoration: none;
 }
 
 .web-btn:hover {
@@ -104,5 +105,11 @@
   margin: 8px 0;
 }
 
+.center-desc {
+  font-size: 0.9rem;      
+  color: #868e96;        
+  margin: 5px 0 12px 0;   
+  line-height: 1.4;      
+}
 
 
