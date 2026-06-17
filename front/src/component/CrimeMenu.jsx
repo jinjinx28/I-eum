@@ -6,11 +6,13 @@ function CrimeMenu() {
   const navigate = useNavigate();
 
   const CRIME_TYPES = [
-    { id: 'sexual', name: '성범죄', icon: <i className="fa-solid fa-person-rays"></i> },
+    { id: 'sexual', name: '성범죄 / 디지털성범죄', icon: <i className="fa-solid fa-person-rays"></i> },
     { id: 'violence', name: '폭력 / 상해', icon: <i className="fa-solid fa-hand-fist"></i> },
-    { id: 'economic', name: '경제범죄', icon: <i className="fa-solid fa-money-check-dollar"></i> },
-    { id: 'cyber', name: '사이버범죄', icon: <i className="fa-solid fa-laptop"></i> },
-    { id: 'other', name: '기타 / 특수', icon: <i className="fa-solid fa-scale-balanced"></i> },
+    { id: 'economic', name: '경제범죄 / 피싱', icon: <i className="fa-solid fa-money-check-dollar"></i> },
+    { id: 'cyber', name: '사이버 / 해킹', icon: <i className="fa-solid fa-laptop"></i> },
+    { id: 'stalking', name: '스토킹 / 디지털스토킹', icon: <i className="fa-solid fa-person-walking"></i>},
+    { id: 'atrocious', name: '강력범죄', icon: <i className="fa-solid fa-shield-halved"></i> }
+
   ];
 
   return (

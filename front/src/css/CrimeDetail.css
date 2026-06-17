@@ -1,3 +1,4 @@
+/* detail */
 .detail-container {
   max-width: 800px;
   margin: 100px auto;
@@ -14,6 +15,7 @@
   align-items: center;
   position: relative;
   padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .detail-icon-circle {
@@ -167,4 +169,31 @@
 .support-link span {
   font-size: 0.85rem;
   color: #666;
+}
+
+/* 탭 메뉴 전체 컨테이너 */
+.tab-menu {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding: 0 20px;
+}
+
+/* 개별 탭 버튼 */
+.tab-menu button {
+  padding: 10px 20px;
+  border: 1px solid var(--theme-color);
+  background: white;
+  color: var(--theme-color);
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+/* 활성화된 탭 스타일 */
+.tab-menu button.active {
+  background: var(--theme-color);
+  color: white;
 }
