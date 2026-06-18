@@ -39,25 +39,51 @@ function Checklist() {
     );
   }
 
-  return (
-    <div className="checklist-container">
-      <button className="back-btn" onClick={() => navigate(-1)}>← 뒤로가기</button>
-      <h2>{CRIME_TITLES[typeId] || '범죄'} 증거 확보 체크리스트</h2>
+  const handleFileUpload = (e, itemId) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+  const isLoggedIn = localStorage.getItem('isLoggedIn'); // 로그인 시 저장한 키값
+    if (!isLoggedIn) {
+      alert('로그인 후 증거를 업로드할 수 있습니다.');
+      navigate('/login'); 
+
+  console.log(`항목 ${itemId}에 대한 파일 업로드 시도:`, file.name);
+    alert(`${file.name} 파일이 업로드되었습니다! (서버 연동 예정)`);
+  };
+}
+
+return (
+  <div className="checklist-container">
+    <button className="back-btn" onClick={() => navigate(-1)}>← 뒤로가기</button>
+    <h2>{CRIME_TITLES[typeId] || '범죄'} 증거 확보 체크리스트</h2>
+    
+    <ul className="checklist-list">
+      {items.map(item => (
+        <li key={item.id} className={checkedItems[item.id] ? 'checked' : ''} onClick={() => toggleItem(item.id)}>
+          <input type="checkbox" checked={!!checkedItems[item.id]} readOnly />
+          <span className="checklist-text">{item.text}</span>
+        </li>
+      ))}
+    </ul>
+
+    <div className="checklist-footer">
+      <label className="upload-btn">
+        증거 파일 업로드
+        <input 
+          type="file" 
+          multiple 
+          hidden 
+          onChange={handleFileUpload} 
+        />
+      </label>
       
-      <ul className="checklist-list">
-        {items.map(item => (
-          <li key={item.id} className={checkedItems[item.id] ? 'checked' : ''} onClick={() => toggleItem(item.id)}>
-            <input type="checkbox" checked={!!checkedItems[item.id]} readOnly />
-            <span className="checklist-text">{item.text}</span>
-          </li>
-        ))}
-      </ul>
-      
-      <div className="checklist-footer">
-        <button className="reset-btn" onClick={() => setCheckedItems({})}>전체 초기화</button>
-      </div>
+      <button className="reset-btn" onClick={() => setCheckedItems({})}>
+        전체 초기화
+      </button>
     </div>
-  );
+  </div>
+);
 }
 
 export default Checklist;
